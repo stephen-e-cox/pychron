@@ -21,6 +21,7 @@ from traitsui.api import View
 from pychron.envisage.tasks.base_editor import grouped_name
 from pychron.options.options_manager import IdeogramOptionsManager, OptionsController, SeriesOptionsManager, \
     SpectrumOptionsManager, InverseIsochronOptionsManager, VerticalFluxOptionsManager, XYScatterOptionsManager
+# from pychron.options.views import view
 from pychron.options.views import view
 from pychron.pipeline.nodes.base import BaseNode
 from pychron.pipeline.plot.plotter.series import RADIOGENIC_YIELD, PEAK_CENTER, \
