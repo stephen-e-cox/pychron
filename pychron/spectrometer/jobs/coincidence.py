@@ -128,6 +128,11 @@ class Coincidence(BasePeakCenter):
                 continue
 
             dac_dev = post - cen
+            if dac_dev < 0:
+                sign = -1
+            else:
+                sign = 1
+
             if self.spectrometer.simulation:
                 dac_dev = -random()
 
@@ -135,7 +140,7 @@ class Coincidence(BasePeakCenter):
                 self.info('no offset detected between {} and {}'.format(ref, di.name))
                 continue
 
-            defl = di.map_dac_to_deflection(dac_dev)
+            defl = sign * di.map_dac_to_deflection(abs(dac_dev))
             self.info('{} dac dev. {:0.5f}. converted to deflection voltage {:0.1f}.'.format(di.name, dac_dev, defl))
 
             curdefl = di.deflection
@@ -298,4 +303,3 @@ class Coincidence(BasePeakCenter):
 #     def _reference_detector_default(self):
 #         self.additional_detectors = self.detectors[1:]
 #         return self.detectors[0]
-

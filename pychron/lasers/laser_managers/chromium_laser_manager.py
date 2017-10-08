@@ -28,7 +28,7 @@ class ChromiumCO2Manager(EthernetLaserManager):
     configuration_dir_name = 'chromium'
     _alive = False
 
-    y_sign = -1  # these should be config values
+    y_sign = 1  # these should be config values
     x_sign = 1
     z_sign = 1
 
