@@ -16,7 +16,6 @@
 
 # ============= enthought library imports =======================
 from apptools.preferences.preference_binding import bind_preference
-from pyface.timer.do_later import do_after
 from traits.api import Instance, String, Property, Button, \
     Bool, Event, on_trait_change, Str, Int, Float
 
@@ -174,6 +173,7 @@ class VideoStageManager(StageManager):
                 close()
 
     def initialize_video(self):
+        self.debug('initialize video')
         if self.video:
             self.video.open(
                 identifier=self.video_identifier)

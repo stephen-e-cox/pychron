@@ -182,7 +182,8 @@ class StageManager(BaseStageManager):
 
     def finish_loading(self):
         self.initialize_stage()
-
+        self.debug('finish loading complete')
+        
     def initialize_stage(self):
         self.update_axes()
         axes = self.stage_controller.axes

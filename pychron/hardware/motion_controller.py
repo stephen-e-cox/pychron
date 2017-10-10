@@ -92,7 +92,9 @@ class MotionController(CoreDevice):
 
     def update_axes(self):
         for a in self.axes:
+            self.debug('get position {}'.format(a))
             pos = self.get_current_position(a)
+            self.debug('got position {}'.format(pos))
             if pos is not None:
                 setattr(self, '_{}_position'.format(a), pos)
                 #            time.sleep(0.075)
